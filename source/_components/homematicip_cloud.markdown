@@ -17,9 +17,8 @@ ha_category:
   - Light
   - Sensor
   - Switch
-ha_iot_class: "Cloud Push"
+ha_iot_class: Cloud Push
 ha_release: 0.66
-featured: false
 redirect_from:
   - /components/alarm_control_panel.homematicip_cloud/
   - /components/binary_sensor.homematicip_cloud/
@@ -41,6 +40,7 @@ There is currently support for the following device types within Home Assistant:
 * Light
 * Sensor
 * Switch
+* Weather
 
 ## {% linkable_title Setup the component via the frontend %}
 
@@ -92,19 +92,25 @@ authtoken:
 
 * homematicip_cloud.binary_sensor
   * Window and door contact (*HmIP-SWDO, -I*)
-  * Rotary Handle Sensor (*HmIP-SRH*)
+  * Window Rotary Handle Sensor (*HmIP-SRH*)
   * Smoke sensor and alarm (*HmIP-SWSD*)
-  * Motion detectors (*HmIP-SMI*)
-  * Water detector (*HmIP-SWD*)
+  * Motion Detector with Brightness Sensor - indoor (*HmIP-SMI*)
+  * Water Sensor (*HmIP-SWD*)
 
 * homematicip_cloud.climate
+  * Heating-Thermostat Radiator with Display (*HmIP-eTRV,-2*) - should also work with (*HmIP-eTRV-2-UK, -B, -B1, -C*)
   * Climate group (*HmIP-HeatingGroup*)
-  * This includes temperature/humidity measures for climate devices of a room delivered by: 
-    * Wall-mounted thermostat (*HmIP-WTH, -2*)
-    * Brand Wall-mounted thermostat (*HmIP-BWTH, -24*)
-    * Radiator thermostat (*HmIP-eTRV, -2, -C*)
+  * This includes temperature/humidity measures for climate devices of a room delivered by:
+    * Wall-mounted thermostat (*HmIP-WTH, WTH-2*)
+    * Brand Wall-mounted thermostat (*HmIP-BWTH, BWTH-24*)
+    * Radiator thermostat (*HmIP-eTRV,-2*) - should also work with (*HmIP-eTRV-2-UK, -B, -B1, -C*)
     * Temperature and humidity sensor (*HmIP-STH*)
     * Temperature and humidity Sensor with display (*HmIP-STHD*)
+    
+* homematicip_cloud.cover
+  * Blind actuator for brand switches (*HmIP-BBL*)
+  * Shutter actuator brand-mount (*HmIP-BROLL*)
+  * Shutter actuator flush-mount (*HmIP-FROLL*)    
 
 * homematicip_cloud.light
   * Switch actuator and meter for brand switches (*HmIP-BSM*)
@@ -114,23 +120,22 @@ authtoken:
   * Switch Actuator for brand switches – with signal lamp (*HmIP-BSL*)
 
 * homematicip_cloud.sensor
-  * Accesspoint duty-cycle (*HmIP-HAP, -B1*)
-  * Wall-mounted thermostat (*HmIP-WTH, -2*)
-  * Brand Wall-mounted thermostat (*HmIP-BWTH, -24*)
-  * Radiator thermostat (valve position only) (*HmIP-eTRV,-2*, -C) - should also work with (*HmIP-eTRV-2-UK, -B, -B1*)
-  * Temperature and humidity sensor (*HmIP-STH*)
-  * Temperature and humidity Sensor with display (*HmIP-STHD*)
-  * Outdoor temperature and humidity sensor (*HmIP-STHO, -A*)
-  * Illuminance sensor (*HmIP-SMI*)
-  * Light Sensor outdoor (*HmIP-SLO*)
+  * Cloud Access point duty-cycle (*HmIP-HAP, -B1*)
+  * Wall Mounted Thermostat Pro with Display (*HmIP-WTH, WTH2*)
+  * Temperature and Humidity Sensor without display - indoor (*HmIP-STH*)
+  * Temperature and Humidity Sensor with display - indoor (*HmIP-STHD*)
+  * Temperature and Humidity sensor - outdoor (*HmIP-STHO, -A*)
+  * Motion Detector with Brightness Sensor - indoor (*HmIP-SMI*)
+  * Light Sensor - outdoor (*HmIP-SLO*)
 
 * homematicip_cloud.switch
   * Pluggable Switch (*HmIP-PS*)
   * Pluggable Switch and Meter (*HmIP-PSM*) - should also work with (*HmIP-PSM-CH, -IT, -UK, -PE*)
-  * Switch actuator with open collector output (*HmIP-MOD-OC8*)
+  * Switch Actuator for brand switches – with signal lamp (*HmIP-BSL*)
+  * Open Collector Module Receiver - 8x (*HmIP-MOD-OC8)
 
-* homematicip_cloud.shutter
-  * Blind actuator for brand switches (*HmIP-BBL*)
-  * Shutter actuator brand-mount (*HmIP-BROLL*)
-  * Shutter actuator flush-mount (*HmIP-FROLL*)
+* homematicip_cloud.weather
+  * Weather Sensor – basic (*HmIP-SWO-B*)
+  * Weather Sensor – plus (*HmIP-SWO-PL*)
+  * Weather Sensor – pro (*HmIP-SWO-PR*)
 

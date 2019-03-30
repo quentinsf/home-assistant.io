@@ -111,7 +111,6 @@ google_assistant:
   exposed_domains:
     - switch
     - light
-    - group
   entity_config:
     switch.kitchen:
       name: CUSTOM_NAME_FOR_GOOGLE_ASSISTANT
@@ -121,6 +120,8 @@ google_assistant:
     light.living_room:
       expose: false
       room: LIVING_ROOM
+    group.all_automations:
+      expose: false
 ```
 
 {% configuration %}
@@ -190,6 +191,10 @@ Currently, the following domains are available to be used with Google Assistant,
 - media_player (on/off/set volume (via set brightness)/source (via set input source))
 - climate (temperature setting, operation_mode)
 - vacuum (dock/start/stop/pause)
+
+<p class='note warning'>
+  The domain groups contains groups containing all items, by example group.all_automations. When telling Google Assistant to shut down everything, this will lead in this example to disabling all automations
+</p>
 
 ### {% linkable_title Media Player Sources %}
 
